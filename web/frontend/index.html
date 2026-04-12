@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChurnScope - Customer Churn Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <main class="container">
+    <section class="hero card reveal">
+      <p class="kicker">ML MINI PROJECT</p>
+      <h1>ChurnScope</h1>
+      <p class="subtitle">Predict if a telecom customer will leave, with confidence score and live history.</p>
+      <div class="status-wrap">
+        <span id="apiStatus" class="badge">Checking API...</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card reveal delay-1">
+        <h2>Customer Input</h2>
+        <form id="predictForm" class="form-grid"></form>
+        <button id="predictBtn" class="btn-primary" type="button">Run Prediction</button>
+      </div>
+
+      <div class="card reveal delay-2">
+        <h2>Prediction Result</h2>
+        <div id="resultBox" class="result-box muted">Submit customer data to see prediction.</div>
+      </div>
+    </section>
+
+    <section class="card reveal delay-3">
+      <div class="history-head">
+        <h2>Supabase Prediction History</h2>
+        <button id="refreshHistory" class="btn-secondary" type="button">Refresh</button>
+      </div>
+      <div id="historyInfo" class="muted small"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Label</th>
+              <th>Probability</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
